@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://getbootstrap.com/examples/navbar-static-top/ -->
+<html lang="en" hola_ext_inject="disabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Sign Up</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./index_files/bootstrap.min.css" rel="stylesheet">
+	
+
+
+    <!-- Custom styles for this template -->
+    <link href="./index_files/navbar-static-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./index_files/ie-emulation-modes-warning.js"></script>
+
+    <script>
+	  function loadPage(){
+	    if(typeof(Storage) !== "undefined") {
+        if(localStorage.isLoggedIn==0){
+  	      displayLoggedout();
+  	    }else if(localStorage.isLoggedIn==1){
+  	      displayLoggedin();
+  	    }
+      }
+	  }
+	
+	  function loggedout() {
+	    if(typeof(Storage) !== "undefined") {
+        localStorage.isLoggedIn = 0;
+        localStorage.isStudent=0;
+        localStorage.isTeamMember=0;
+        localStorage.isTeamCaptain=0;
+  	      displayLoggedout();
+      }
+	  }
+	  function loggedin() {
+	    if(typeof(Storage) !== "undefined") {
+        localStorage.isLoggedIn = 1;
+  	    displayLoggedin();
+      }
+	  }
+	  function displayLoggedout(){
+		  document.getElementById("notlogged1").style.display = "block";
+		  document.getElementById("loggedin1").style.display = "none";
+	  }
+	  function displayLoggedin(){
+		  document.getElementById("notlogged1").style.display = "none";
+		  document.getElementById("loggedin1").style.display = "block";
+	  }
+	  
+	  function clickedSignup(){
+	    if(typeof(Storage) !== "undefined") {
+        if (document.getElementById('stud').checked) {
+          localStorage.isStudent=1;
+        }else{
+          localStorage.isStudent=0;
+        }
+      }
+	  }
+	</script>
+	</head>
+  <body onload = "loadPage()">
+	
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">
+            <img style="margin-top:-15px" src="./images/logo.png" alt="Trick-Or-Eat Logo" width="80" height="80">
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./teams.html">Teams</a></li>
+            <li><a href="./donation.html">Donation</a></li>
+            <li><a href="./index_agency.html">Campaigns</a></li>
+              </ul>
+            </li>
+          </ul>
+		  
+		  
+          <ul class="nav navbar-nav navbar-right">
+			<div id="notlogged1">
+            <li><input type="text" color = "blue" placeholder="Username" /> <input type="password" placeholder="Password" /> <button onclick="loggedin()" type="button">Log In</button></li>
+			</div>
+			<div id="loggedin1">
+			<li> Hello User! <button onclick="loggedout()" type="button">Log Out</button> </li>
+			</div>
+          </ul>
+			
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+	
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+	  <div class="nav">
+	  <span style="color:#FEA101;" >
+	  <h1>
+	  <b>
+		Sign Up
+		<b>
+	  </h1>
+	  </span>
+		<br>
+		<br>
+        <p>
+		  <input type="text" placeholder="First name" />
+		  <br>
+		  <br>
+		  <input type="text" placeholder="Last name" />
+		  <br>
+		  <br>
+		  <input type="text" placeholder="Email" />
+		  <br>
+		  <br>
+		  <input type="password" placeholder="Password" />
+		  <br>
+		  <br>
+		  <span style="color: white;" >
+		  <input type="radio" id="stud" name="studentRB" value="student" checked>Student
+		  <input type="radio" id="nonstud" name="studentRB" value="nonstudent">Non Student
+		</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="./index_wavier.html" onClick="clickedSignup()" role="button">Sign Up</a>
+		  <div class="custom"  >
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./index_files/jquery.min.js"></script>
+    <script src="./index_files/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./index_files/ie10-viewport-bug-workaround.js"></script>
+  
+
+</body></html>

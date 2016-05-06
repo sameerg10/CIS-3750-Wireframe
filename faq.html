@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://getbootstrap.com/examples/navbar-static-top/ -->
+<html lang="en" hola_ext_inject="disabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>FAQ</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./index_files/bootstrap.min.css" rel="stylesheet">
+	
+
+
+    <!-- Custom styles for this template -->
+    <link href="./index_files/navbar-static-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./index_files/ie-emulation-modes-warning.js"></script>
+
+    <script>
+	  function loadPage(){
+	    if(typeof(Storage) !== "undefined") {
+        if(localStorage.isLoggedIn==0){
+  	      displayLoggedout();
+  	    }else if(localStorage.isLoggedIn==1){
+  	      displayLoggedin();
+  	    }
+      }
+	  }
+	
+	  function loggedout() {
+	    if(typeof(Storage) !== "undefined") {
+        localStorage.isLoggedIn = 0;
+        localStorage.isStudent=0;
+        localStorage.isTeamMember=0;
+        localStorage.isTeamCaptain=0;
+  	      displayLoggedout();
+      }
+	  }
+	  function loggedin() {
+	    if(typeof(Storage) !== "undefined") {
+        localStorage.isLoggedIn = 1;
+  	    displayLoggedin();
+      }
+	  }
+	  function displayLoggedout(){
+		  document.getElementById("notlogged1").style.display = "block";
+		  document.getElementById("loggedin1").style.display = "none";
+	  }
+	  function displayLoggedin(){
+		  document.getElementById("notlogged1").style.display = "none";
+		  document.getElementById("loggedin1").style.display = "block";
+	  }
+	</script>
+	</head>
+  <body onload = "loadPage()">
+	
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">
+            <img style="margin-top:-15px" src="./images/logo.png" alt="Trick-Or-Eat Logo" width="80" height="80">
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./teams.html">Teams</a></li>
+            <li><a href="./donation.html">Donation</a></li>
+            <li><a href="./index_agency.html">Campaigns</a></li>
+              </ul>
+            </li>
+          </ul>
+		  
+		  
+          <ul class="nav navbar-nav navbar-right">
+			<div id="notlogged1">
+            <li><input type="text" color = "blue" placeholder="Username" /> <input type="password" placeholder="Password" /> <button onclick="loggedin()" type="button">Log In</button></li>
+			</div>
+			<div id="loggedin1">
+			<li> Hello User! <button onclick="loggedout()" type="button">Log Out</button> </li>
+			</div>
+          </ul>
+			
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+	
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+	  <div class="nav">
+	  <h1 style="color:#FEA101;"><b>
+		FAQ
+		</b>
+	  </h1>
+		<br>
+		<br>
+        <p>
+			<span style= "color:white;">
+		  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum tempus accumsan. Nullam tempor in magna ac auctor. Nulla vulputate felis faucibus, condimentum leo a, sagittis justo. Etiam id libero bibendum, malesuada dolor nec, pellentesque dui. Donec commodo sollicitudin turpis ac aliquet. Donec tristique est est, et rhoncus ligula auctor ac. Vivamus lobortis convallis odio. Quisque non ipsum vel metus tempor luctus eget quis magna. Sed pellentesque sapien a orci porttitor lobortis. Nam vel ullamcorper purus. Duis nisi lectus, sodales sed bibendum ac, hendrerit et sapien.
+
+		  Aliquam rhoncus cursus arcu quis ultrices. Pellentesque mattis sit amet augue non viverra. Sed condimentum, augue non blandit luctus, lacus libero cursus risus, dignissim pretium orci ipsum id ligula. Vivamus mollis commodo lacinia. Vivamus quis vulputate est, at cursus nisi. Fusce congue felis ut pharetra dapibus. Vestibulum porttitor malesuada tortor, et egestas augue bibendum vitae. Nullam vel orci est. Aenean nec leo vitae dui ultricies consectetur.
+
+		  Duis lacinia turpis quis magna molestie, ut efficitur libero posuere. In eu dictum diam. Sed ultrices commodo lectus at sodales. Phasellus vel nisi lacinia, iaculis velit malesuada, euismod arcu. Nam volutpat sagittis lacus eget fermentum. Pellentesque lobortis, elit sit amet sodales mollis, orci nunc sodales dolor, eget lacinia ante ante lacinia nibh. Nunc tincidunt justo risus, non vehicula ante consequat at. Nunc auctor sapien enim, in ultricies sapien sollicitudin sed. Mauris imperdiet risus ac nunc feugiat, sed congue mi gravida. Sed nunc est, pellentesque vel varius non, ornare a purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris volutpat velit ut nibh dignissim lacinia. Sed eget nulla tempor, porta nulla in, pretium quam. Pellentesque sit amet scelerisque ligula. Sed quis felis sagittis, luctus lorem in, auctor erat.
+		</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="./index.html" role="button">Home</a>
+		  <div class="custom"  >
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./index_files/jquery.min.js"></script>
+    <script src="./index_files/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./index_files/ie10-viewport-bug-workaround.js"></script>
+  
+
+</body></html>

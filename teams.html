@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<style>
+label{
+  display:inline-block;
+  width:200px;
+  margin-right:30px;
+  text-align:right;
+}
+
+fieldset{
+  border:none;
+  width:500px;
+  margin:0px auto !important;
+  
+}
+</style>
+<!-- saved from url=(0052)http://getbootstrap.com/examples/navbar-static-top/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <title>Trick or Eat - Teams</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./index_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./index_files/navbar-static-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./index_files/ie-emulation-modes-warning.js"></script><style type="text/css"></style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script>
+  
+  
+	
+	</head>
+  <body onload = "loadPage()">
+	
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">
+            <img style="margin-top:-15px" src="./images/logo.png" alt="Trick-Or-Eat Logo" width="80" height="80">
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="./index.html">Home</a></li>
+            <li class="active"><a href="./teams.html">Teams</a></li>
+            <li><a href="./donation.html">Donation</a></li>
+            <li><a href="./index_agency.html">Campaigns</a></li>
+              </ul>
+            </li>
+          </ul>
+		  
+		  
+          <ul class="nav navbar-nav navbar-right">
+			<div id="notlogged1">
+            <li><input type="text" color = "blue" placeholder="Username" /> <input type="password" placeholder="Password" /> <button onclick="loggedin()" type="button">Log In</button></li>
+			</div>
+			<div id="loggedin1">
+			<li> Hello User! <button onclick="loggedout()" type="button">Log Out</button> </li>
+			</div>
+          </ul>
+			
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container color-body">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+                
+        <span style="color:#FEA101;" >
+          <h1>Trick or Eat Team</h1>
+        </span>
+        
+        
+        
+        <div id="notlogged2">
+          <span style="color:#FFFFFF;" >
+            <p>You must be logged in to view the teams page! Login now!</p>
+          </span>
+          <input type="text" color = "blue" placeholder="Username" /> <input type="password" placeholder="Password" /> <button onclick="loggedin()" type="button">Log In</button>
+			  </div>
+			   
+			   
+			  <div id="googleMapDiv" style="  width:38%; float: right; display: inline-block;">        
+			    <div id="googleMap" style="width:500px;height:380px;"></div>
+			   
+			  </div>
+			  <div id="loggedinParticipantOptions" style="  width:40%; float: left; display: inline-block;">
+			  <input class="btn btn-lg btn-primary" type=button onClick="loggedinCreate()" value='Create a Team'>
+			<input class="btn btn-lg btn-primary" type=button onClick="loggedinJoin()" value='Join a Team'>
+			</div>
+			  <div id="loggedinParticipant" style="  width:40%; float: left; display: inline-block;">        
+			    <div>
+            
+			      <hr>
+            <span style="color:#FFFFFF;">
+              <div style="margin-left:10%;width:80%" align="center">
+			          <h2><b>Join a Team!</b></h2>
+              </div>
+              
+                <fieldset>
+    			        <label>Team Name:</label><input type="text" id="myText" value="" style="color:black;">
+    			        <label>Team Captain Name:</label><input type="text" id="myText" value="" style="color:black;">
+    			        <label>Team Location:</label>		        
+    			          <select id="CitySelectList" style="color:#000000;margin-left:-4px">
+                      <option value="novalue" selected>N/A</option>
+                      <option value="Guelph">Guelph</option>
+                      <option value="Kitchener">Kitchener</option>
+                      <option value="Toronto">Toronto</option>
+                    </select>
+                </fieldset>
+              
+			      
+              <div align="center" style="padding-top:10px">
+			          <button type="button" onClick="updateCitySelected()" style="color:black;">Search</button>
+              </div>
+              
+              <div align="center" style="padding-top:30px">
+                <h2><b>List of Teams</b></h2>
+              </div>
+            </span>
+            
+            <div align="center">
+              <select id="TeamSelectList" onchange="updateTeamSelected()" multiple style="width:300px">
+                <option value="no">No teams to show</option>
+              </select>
+              
+              <span style="color:#FFFFFF;" >
+                <div style="padding-top:30px">
+                  <p id="SelectedTeam">No Team Selected</p>
+    			        <button type="button" onClick="clickedJoinTeam()" style="color:black">Join Team</button>
+                </div>
+              </span>
+            </div>
+          
+			    </div>   
+			  </div>
+			  
+			  <div id="loggedinParticipantCreate" style="  width:40%; float: left; display: inline-block;">        
+			    <div>
+            
+			      <hr>
+            <span style="color:#FFFFFF;">
+              <div style="margin-left:10%;width:80%" align="center">
+			          <h2><b>Create a Team!</b></h2>
+              </div>
+              
+                <fieldset>
+    			        <label>Team Name:</label><input type="text" id="myText" value="" style="color:black;">
+    			        <label>Team Location:</label>		        
+    			          <select id="CitySelectList" style="color:#000000;margin-left:-4px">
+                      <option value="novalue" selected>N/A</option>
+                      <option value="Guelph">Guelph</option>
+                      <option value="Kitchener">Kitchener</option>
+                      <option value="Toronto">Toronto</option>
+                    </select>
+					<label>Number of Team Members:</label>		        
+    			          <select id="numofmembers" style="color:#000000;margin-left:-4px">
+                      <option value="3" selected>3</option>
+                      <option value="4">4</option>
+                    </select>
+					<br>
+					<label>Team Member #1 Full Name:</label><input type="text" id="myText" value="" style="color:black;">
+					<label>Team Member #1 Email:</label><input type="text" id="myText" value="" style="color:black;">
+					<br>
+					<label>Team Member #2 Full Name:</label><input type="text" id="myText" value="" style="color:black;">
+					<label>Team Member #2 Email:</label><input type="text" id="myText" value="" style="color:black;">
+					<label>Team Member #3 Full Name:</label><input type="text" id="myText" value="" style="color:black;">
+					<label>Team Member #3 Email:</label><input type="text" id="myText" value="" style="color:black;">
+					<label>Team Member #4 Full Name:</label><input type="text" id="myText" value="" style="color:black;">
+					<label>Team Member #4 Email:</label><input type="text" id="myText" value="" style="color:black;">
+                </fieldset>
+              
+			      
+              <div align="center" style="padding-top:10px">
+			          <button type="button" onClick="clickedCreateTeam()" style="color:black;">Create Team</button>
+              </div>
+              
+            </div>
+              
+			    </div>   
+
+			    
+			  </div>
+			  <div id="loggedinTeamCaptain" style="  width:40%; float: left;">  
+            <span style="color:#FFFFFF;" >
+			        <h2><b>Route Information</b></h2> 
+			        <p>Chosen Route: <input type="text" id="routeText" style="color:black" value="No Route Selected"></p>
+            </span>
+			  </div>
+			    			  
+			  <div id="loggedinTeamMember" style="  width:40%; float: left;"> 
+			      
+            <span style="color:#FFFFFF;" >
+			        <h2><b>Team Information</b></h2> 
+			        <p>Campaign Name: Lorem Ipsum</p>
+			        <p>Team Name: Lorem Ipsum</p> 
+			        <p>Team Captain: Lorem@Ipsum.com</p> 
+			        
+			        <table border="2" style="width:300px">
+                <tr style="font-weight:bold">
+                  <td>Team Members</td>
+                </tr>
+                <tr>
+                  <td>123@abc.ca</td>
+                </tr>
+                <tr>
+                  <td>456@def.ca</td>
+                </tr>
+                <tr>
+                  <td>789@ghi.ca</td>
+                </tr>
+                <tr>
+                  <td>1011@jkl.ca</td>
+                </tr>
+              </table>
+            </span>
+			      
+			    </div>  
+			  
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	
+	<script>
+	  function loadPage(){
+	    if(typeof(Storage) !== "undefined") {
+        if(localStorage.isLoggedIn==0){
+  	      displayLoggedout();
+  	    }else if(localStorage.isLoggedIn==1){
+  	    
+  	      if(localStorage.isTeamMember==1){
+  	      
+  	        if(localStorage.isTeamCaptain==1){
+  	        
+  	          loggedinTeamCaptain();
+  	        }else{
+  	          loggedinTeamMember();
+  	        }
+  	      }else{
+  	        displayLoggedin();
+  	      }
+  	    }
+      }
+	  }
+	
+	  function loggedout() {
+	    if(typeof(Storage) !== "undefined") {
+        localStorage.isLoggedIn = 0;
+        localStorage.isStudent=0;
+        localStorage.isTeamMember=0;
+        localStorage.isTeamCaptain=0;
+  	      displayLoggedout();
+      }
+	  }
+	  function loggedin() {
+	    if(typeof(Storage) !== "undefined") {
+        localStorage.isLoggedIn = 1;
+  	    if(localStorage.isTeamMember==1){
+  	      if(localStorage.isTeamCaptain==1){
+  	        loggedinTeamCaptain();
+  	      }else{
+  	        loggedinTeamMember();
+  	      }
+  	    }else{
+  	      displayLoggedin();
+  	    }
+      }
+	  }
+	  
+	  function clickedJoinTeam() {
+      localStorage.isTeamMember=1;
+  	  loggedinTeamMember();
+    }
+	  
+	  function clickedCreateTeam(){
+	    localStorage.isTeamCaptain=1;
+		localStorage.isTeamMember=1;
+		loggedinTeamCaptain();
+	  }
+	
+	  function displayLoggedout() {
+	  
+		  document.getElementById("notlogged1").style.display = "block";
+		  document.getElementById("notlogged2").style.display = "block";
+		
+		  document.getElementById("loggedin1").style.display = "none";
+		  document.getElementById("googleMapDiv").style.display = "none";
+		  document.getElementById("loggedinParticipant").style.display = "none";
+		  document.getElementById("loggedinTeamMember").style.display = "none";
+		  document.getElementById("loggedinTeamCaptain").style.display = "none";
+		  document.getElementById("loggedinParticipantCreate").style.display = "none";
+		  document.getElementById("loggedinParticipantOptions").style.display = "none";
+		
+	  }
+	  
+	  function displayLoggedin() {
+	    initializeGoogleRouteMap();
+	  	  		
+		  document.getElementById("notlogged1").style.display = "none";
+		  document.getElementById("notlogged2").style.display = "none";
+		
+		  document.getElementById("loggedinParticipantOptions").style.display = "block";
+		  document.getElementById("loggedin1").style.display = "block";
+		  document.getElementById("googleMapDiv").style.display = "block";
+		  document.getElementById("loggedinParticipant").style.display = "none";
+		  document.getElementById("loggedinTeamMember").style.display = "none";
+		  document.getElementById("loggedinTeamCaptain").style.display = "none";
+		  document.getElementById("loggedinParticipantCreate").style.display = "none";
+		
+	  }
+	  
+	  function loggedinTeamMember() {
+	    initializeGoogleRouteMap();
+	    addRoutesToGoogleMap();
+	  	  		
+		  document.getElementById("notlogged1").style.display = "none";
+		  document.getElementById("notlogged2").style.display = "none";
+		
+		  document.getElementById("loggedin1").style.display = "block";
+		  document.getElementById("googleMapDiv").style.display = "block";
+		  document.getElementById("loggedinParticipant").style.display = "none";
+		  document.getElementById("loggedinTeamMember").style.display = "block";
+		  document.getElementById("loggedinTeamCaptain").style.display = "none";
+		  document.getElementById("loggedinParticipantCreate").style.display = "none";
+		  document.getElementById("loggedinParticipantOptions").style.display = "none";
+		
+	  }
+	  
+	  function loggedinJoin(){
+		initializeGoogleRouteMap();
+		
+		document.getElementById("notlogged1").style.display = "none";
+		document.getElementById("notlogged2").style.display = "none";
+		
+		document.getElementById("loggedinParticipantOptions").style.display = "none";
+		document.getElementById("loggedin1").style.display = "block";
+		document.getElementById("googleMapDiv").style.display = "block";
+		document.getElementById("loggedinParticipantCreate").style.display = "none";
+		document.getElementById("loggedinParticipant").style.display = "block";
+		document.getElementById("loggedinTeamMember").style.display = "none";
+		document.getElementById("loggedinTeamCaptain").style.display = "none";
+	  
+	  }
+	  
+	  function loggedinCreate(){
+		initializeGoogleRouteMap();
+		
+		document.getElementById("notlogged1").style.display = "none";
+		document.getElementById("notlogged2").style.display = "none";
+		
+		document.getElementById("loggedinParticipantOptions").style.display = "none";
+		document.getElementById("loggedin1").style.display = "block";
+		document.getElementById("googleMapDiv").style.display = "block";
+		document.getElementById("loggedinParticipant").style.display = "none";
+		document.getElementById("loggedinTeamMember").style.display = "none";
+		document.getElementById("loggedinTeamCaptain").style.display = "none";
+		document.getElementById("loggedinParticipantCreate").style.display = "block";
+	  
+	  }
+	  
+	  function loggedinTeamCaptain() {
+	    initializeGoogleRouteMap();
+	    mapMarkersSaySelected();
+	    addRoutesToGoogleMap();
+	  	  		
+		  document.getElementById("notlogged1").style.display = "none";
+		  document.getElementById("notlogged2").style.display = "none";
+		
+		  document.getElementById("loggedin1").style.display = "block";
+		  document.getElementById("googleMapDiv").style.display = "block";
+		  document.getElementById("loggedinParticipantCreate").style.display = "none";
+		  document.getElementById("loggedinParticipantOptions").style.display = "none";
+		  document.getElementById("loggedinParticipant").style.display = "none";
+		  document.getElementById("loggedinTeamMember").style.display = "block";
+		  document.getElementById("loggedinTeamCaptain").style.display = "block";
+		
+	  }
+	  
+	</script>
+    <script src="./index_files/jquery.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="./wireframeJS/wireframe.js"></script>
+    <script src="./wireframeJS/wireframeGoogleMap.js"></script>
+
+    <!--script src="./index_files/bootstrap.min.js"></script-->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./index_files/ie10-viewport-bug-workaround.js"></script>
+  
+
+  </body>
+</html>

@@ -1,0 +1,50 @@
+body { background-color: #57524E !important;}
+
+body {
+  min-height: 1500px;
+  
+}
+
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.navbar-default.navbar-static-top li a {
+    color: BLACK;
+    font-size: 1.5em;
+}
+
+
+
+.navbar-static-top {
+    background-color: #FEA101;
+    border-color: #FEA101;
+    
+}
+
+.navbar-default .navbar-brand {
+	color: BLACK;
+    color: #57524E;
+    font-size: 1.5em;
+}
+
+.color-head {
+	color: #FEA101;
+}
+
+.color-body {
+	color: #57524E;
+}
+
+.jumbotron {
+    background-color: #57524E;
+}
+
+
+.navbar-default navbar-static-top {
+ 	background-color: #57524E;
+    border-color: #FEA101;
+    
+
+

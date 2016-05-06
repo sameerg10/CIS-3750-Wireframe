@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://getbootstrap.com/examples/navbar-static-top/ -->
+<html lang="en" hola_ext_inject="disabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Trick or Eat</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./index_files/bootstrap.min.css" rel="stylesheet">
+	
+
+
+    <!-- Custom styles for this template -->
+    <link href="./index_files/navbar-static-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./index_files/ie-emulation-modes-warning.js"></script>
+	
+	<script>
+	  
+	  function loadPage(){
+	    if(typeof(Storage) !== "undefined") {
+        if(localStorage.isLoggedIn==0){
+  	      displayLoggedout();
+  	    }else if(localStorage.isLoggedIn==1){
+  	      displayLoggedin();
+  	    }
+      }
+	  }
+	
+	  function loggedout() {
+	    if(typeof(Storage) !== "undefined") {
+        localStorage.isLoggedIn = 0;
+        localStorage.isStudent=0;
+        localStorage.isTeamMember=0;
+        localStorage.isTeamCaptain=0;
+  	      displayLoggedout();
+      }
+	  }
+	  function loggedin() {
+	    if(typeof(Storage) !== "undefined") {
+        localStorage.isLoggedIn = 1;
+  	    displayLoggedin();
+      }
+	  }
+	  function displayLoggedout(){
+		  document.getElementById("notlogged1").style.display = "block";
+		  document.getElementById("notlogged2").style.display = "block";
+		  document.getElementById("loggedin1").style.display = "none";
+		  document.getElementById("loggedin2").style.display = "none";
+	  }
+	  function displayLoggedin(){
+		  document.getElementById("notlogged1").style.display = "none";
+		  document.getElementById("notlogged2").style.display = "none";
+		  document.getElementById("loggedin1").style.display = "block";
+		  document.getElementById("loggedin2").style.display = "block";
+	  }
+	  function clickedSignup(){
+	    if(typeof(Storage) !== "undefined") {
+        if (document.getElementById('stud').checked) {
+          localStorage.isStudent=1;
+        }else{
+          localStorage.isStudent=0;
+        }
+      }
+	  }
+	</script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  
+	<body onload = "loadPage()">
+	
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">
+            <img style="margin-top:-15px" src="./images/logo.png" alt="Trick-Or-Eat Logo" width="80" height="80">
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./teams.html">Teams</a></li>
+            <li><a href="./donation.html">Donation</a></li>
+            <li><a href="./index_agency.html">Campaigns</a></li>
+              </ul>
+            </li>
+          </ul>
+		  
+		  
+          <ul class="nav navbar-nav navbar-right">
+			<div id="notlogged1">
+			<br>
+            <li><input type="text" color = "blue" placeholder="Username" /> <input type="password" placeholder="Password" /> <button onclick="loggedin()" type="button">Log In</button></li>
+			</div>
+			<div id="loggedin1">
+			<br>
+			<li> <font size="3" color="black">Hello User!</font> <button onclick="loggedout()" type="button">Log Out</button> </li>
+			</div>
+          </ul>
+			
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+	  <div class="nav">
+	  <div style="background: #333333; position: relative; right: 30px;"><img src="images/TOEsitebanner.png" alt="Trick or Eat 2015" width="977" /></div><br>
+	  <span style= "color:white;">
+		<div id="notlogged2">
+
+        <p style="  width:50%; float: left; display: inline-block;"> 
+		Trick or Eat is a youth-led national event that puts a new spin on the annual night of giving – Halloween! Thousands of Trick or Eaters across Canada, go door to door to collect food for local community organizations, and funds to support students advocating for good food for all. Trick or Eat is a national day of action, for young people to come together and actively show that they want to see a difference on the issue of hunger on their campuses and in their communities.
+		 </p>
+		 </span>
+		 <span style= "color:black;">
+		 <p style="  width:38%; float: right; display: inline-block;">
+		  <font size="5.5" color="white">Sign Up</font>
+		  <br>
+		  <br>
+		  <input type="text" placeholder="First name" /> 
+		  <br>
+		  <br>
+		  <input type="text" placeholder="Last name" />
+		  <br>
+		  <br>
+		  <input type="text" placeholder="Email" />
+		  <br>
+		  <br>
+		  <input type="password" placeholder="Password" />
+		  <br>
+		  <br>
+		  </span>
+		  <span style="color: white;" >
+		  <input type="radio" id="stud" name="studentRB" value="student" checked>Student
+		  <input type="radio" id="nonstud" name="studentRB" value="nonstudent">Non Student
+		  <br>
+		  <br>
+		  <input type="radio" id="nonacc" name="accessRB" value="nonaccessible" checked>Non-Accessible
+		  <input type="radio" id="acc" name="accessRB" value="accessible">Accessible
+		  <br>
+		  <br>
+          <a class="btn btn-lg btn-primary" href="./index_wavier.html" onClick="clickedSignup()" role="button">Sign Up</a>
+		  
+		</p>
+		</div>
+		<div id="loggedin2">
+		    <p >
+			Trick or Eat is a youth-led national event that puts a new spin on the annual night of giving – Halloween! Thousands of Trick or Eaters across Canada, go door to door to collect food for local community organizations, and funds to support students advocating for good food for all. Trick or Eat is a national day of action, for young people to come together and actively show that they want to see a difference on the issue of hunger on their campuses and in their communities.
+		 </p>
+        <p>
+		  
+		  <a class="btn btn-lg btn-primary" href="./teams.html" role="button">View Teams</a>
+		  <a class="btn btn-lg btn-primary" href="./faq.html" role="button">FAQ</a>
+		  
+		  <div class="custom"  >
+		  <br>
+	<div class="social"><a href="http://www.facebook.com/mealexchange"><img class="deoclomknbpjllnslbym" src="images/facebook.png" border="0" /></a> <a href="http://www.twitter.com/mealexchange" target="blank"><img class="deoclomknbpjllnslbym" src="images/twitter.png" border="0" /></a></div><div class="cl">Connect with Us</div></div>
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./index_files/jquery.min.js"></script>
+    <script src="./index_files/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./index_files/ie10-viewport-bug-workaround.js"></script>
+  
+
+</body></html>
